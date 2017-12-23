@@ -1,20 +1,23 @@
 // Time:  O(n)
 // Space: O(1)
 
+#include <string>
+#include <algorithm>
+using namespace std;
 class Solution {
 public:
-    /**
-     * param A: A string
-     * param offset: Rotate string with offset.
-     * return: Rotated string.
+    /*
+     * @param str: An array of char
+     * @param offset: An integer
+     * @return: nothing
      */
-    string rotateString(string A, int offset) {
-        if (!A.empty()) {
-            offset %= A.length();
-            reverse(A.begin(), A.begin() + A.length() - offset);
-            reverse(A.begin() + A.length() - offset, A.end());
-            reverse(A.begin(), A.end());
+    void rotateString(string &str, int offset) {
+        // write your code here
+        if (!str.empty()){
+            offset %= str.length();
+            reverse(str.begin(), str.begin() + str.length() - offset);
+            reverse(str.begin() + str.length() - offset, str.end());
+            reverse(str.begin(), str.end());
         }
-        return A;
     }
 };
